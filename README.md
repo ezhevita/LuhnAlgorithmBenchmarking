@@ -26,14 +26,14 @@ Job=.NET 8.0  Runtime=.NET 8.0
 | GenerateLuhnDigitSimdSse41           |     3.730 ns | 0.0108 ns | 0.0096 ns |  0.22 |    0.00 |     251 B |
 | GenerateLuhnDigitSimdVector128       |    12.885 ns | 0.0300 ns | 0.0281 ns |  0.77 |    0.00 |     221 B |
 
-## ARM64 results
+## ARM64 results - macOS
 
 ```
 BenchmarkDotNet v0.13.11, macOS Sonoma 14.1.1 (23B81) [Darwin 23.1.0]
 Apple M1 Pro, 1 CPU, 8 logical and 8 physical cores
 .NET SDK 8.0.100
-[Host]   : .NET 8.0.0 (8.0.23.53103), Arm64 RyuJIT AdvSIMD
-.NET 8.0 : .NET 8.0.0 (8.0.23.53103), Arm64 RyuJIT AdvSIMD
+  [Host]   : .NET 8.0.0 (8.0.23.53103), Arm64 RyuJIT AdvSIMD
+  .NET 8.0 : .NET 8.0.0 (8.0.23.53103), Arm64 RyuJIT AdvSIMD
 
 Job=.NET 8.0  Runtime=.NET 8.0
 ```
@@ -46,3 +46,24 @@ Job=.NET 8.0  Runtime=.NET 8.0
 | GenerateLuhnDigit                    |  14.789 ns | 0.0244 ns | 0.0204 ns |  1.00 |    0.00 |
 | GenerateLuhnDigitSimdArm64           |   1.512 ns | 0.0025 ns | 0.0024 ns |  0.10 |    0.00 |
 | GenerateLuhnDigitSimdVector128       |   1.142 ns | 0.0034 ns | 0.0030 ns |  0.08 |    0.00 |
+
+## ARM64 results - Linux in Docker container (OrbStack runtime) under macOS
+
+```
+BenchmarkDotNet v0.13.11, Debian GNU/Linux 12 (bookworm) (container)
+Unknown processor
+.NET SDK 8.0.100
+  [Host]   : .NET 8.0.0 (8.0.23.53103), Arm64 RyuJIT AdvSIMD
+  .NET 8.0 : .NET 8.0.0 (8.0.23.53103), Arm64 RyuJIT AdvSIMD
+
+Job=.NET 8.0  Runtime=.NET 8.0
+```
+
+| Method                               | Mean       | Error     | StdDev    | Ratio | RatioSD | Code Size |
+|------------------------------------- |-----------:|----------:|----------:|------:|--------:|----------:|
+| GenerateLuhnDigitCreditCardValidator | 697.941 ns | 2.5455 ns | 2.3810 ns | 46.94 |    0.13 |   1,420 B |
+| GenerateLuhnDigitLuhnNet             | 115.922 ns | 0.0747 ns | 0.0663 ns |  7.80 |    0.01 |     468 B |
+| GenerateLuhnDigitSlxLuhnLibrary      |  77.040 ns | 0.6014 ns | 0.5332 ns |  5.18 |    0.04 |     556 B |
+| GenerateLuhnDigit                    |  14.862 ns | 0.0083 ns | 0.0073 ns |  1.00 |    0.00 |     200 B |
+| GenerateLuhnDigitSimdArm64           |   1.506 ns | 0.0013 ns | 0.0011 ns |  0.10 |    0.00 |     252 B |
+| GenerateLuhnDigitSimdVector128       |   1.108 ns | 0.0010 ns | 0.0009 ns |  0.07 |    0.00 |     200 B |
