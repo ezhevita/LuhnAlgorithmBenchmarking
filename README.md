@@ -2,6 +2,8 @@
 
 Comparing Luhn algorithm implementation of popular C# libraries and own methods (includes naive approach, platform-specific and platform-agnostic vectorization approaches).
 
+Disassembly for naive and vectorized approaches is available in the `disassembly` directory. Currently Windows x86_64 and Linux ARM64 disassembly listings are provided.
+
 ## x86_64 results
 
 ```
