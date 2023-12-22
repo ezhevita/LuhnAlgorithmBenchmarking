@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
+		<OutputType>Exe</OutputType>
+		<TargetFramework>net8.0</TargetFramework>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="BenchmarkDotNet" Version="0.13.11" />
+		<PackageReference Include="CreditCardValidator" Version="3.0.1" />
+		<PackageReference Include="LuhnNet" Version="2.0.0" />
+		<PackageReference Include="SlxLuhnLibrary" Version="1.0.2" />
+	</ItemGroup>
+
+</Project>
