@@ -2,16 +2,16 @@
 
 	<PropertyGroup>
 		<AnalysisMode>AllEnabledByDefault</AnalysisMode>
+		<NoWarn>CA1515;CA5394</NoWarn>
 		<OutputType>Exe</OutputType>
-		<TargetFramework>net8.0</TargetFramework>
-		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<TargetFramework>net9.0</TargetFramework>
 	</PropertyGroup>
 
 	<ItemGroup>
-		<PackageReference Include="BenchmarkDotNet" Version="0.13.11" />
-		<PackageReference Include="CreditCardValidator" Version="3.0.1" />
-		<PackageReference Include="LuhnNet" Version="2.0.0" />
-		<PackageReference Include="SlxLuhnLibrary" Version="1.0.2" />
+		<PackageReference Include="BenchmarkDotNet" Version="0.13.12"/>
+		<PackageReference Include="CreditCardValidator" Version="3.0.1"/>
+		<PackageReference Include="LuhnNet" Version="2.0.0"/>
+		<PackageReference Include="SlxLuhnLibrary" Version="1.0.2"/>
 	</ItemGroup>
 
 </Project>
